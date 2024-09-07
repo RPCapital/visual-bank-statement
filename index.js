@@ -173,7 +173,7 @@ function updateTopExpenses() {
     topExpenses.forEach(transaction => {
         const li = document.createElement('li');
         li.innerHTML = `
-                    <span>${transaction.description}</span>
+                    <span>${transaction.description.replace("Banking App External ", "")}</span>
                     <span class="transaction-amount negative">-R${formatNumber((transaction.moneyOut * -1).toFixed(2))}</span>
                 `;
         topExpensesList.appendChild(li);
