@@ -116,9 +116,9 @@ function updateDashboard() {
 }
 
 function updateTotals() {
-    const totalBalance = transactions[transactions.length - 1].balance;
     const totalIncome = transactions.reduce((sum, t) => sum + t.moneyIn, 0);
     const totalExpenses = transactions.reduce((sum, t) => sum + t.moneyOut, 0);
+    const totalBalance = totalIncome + totalExpenses;
 
     document.getElementById('totalBalance').textContent = `R${formatNumber(totalBalance.toFixed(2))}`;
     document.getElementById('totalIncome').textContent = `R${formatNumber(totalIncome.toFixed(2))}`;
