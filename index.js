@@ -159,7 +159,7 @@ function updateTopIncomes() {
     topIncomes.forEach(transaction => {
         const li = document.createElement('li');
         li.innerHTML = `
-                    <span>${transaction.description.replace('Payment Received: ', '')}</span>
+                    <span>${transaction.description.replace('Payment Received: ', '').replace("Banking App ", "")}</span>
                     <span class="transaction-amount positive">+R${formatNumber(transaction.moneyIn.toFixed(2))}</span>
                 `;
         topIncomesList.appendChild(li);
